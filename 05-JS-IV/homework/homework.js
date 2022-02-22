@@ -57,20 +57,19 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-  var obj = {
+  const usuario = {
     nombre: nombre,
     email: email,
     password: password
   };
-
-  return obj;
+  return usuario;
 }
 
 function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if (usuario['email']) {
+  if (usuario["email"]) {
     return true;
   } else {
     return false;
@@ -100,10 +99,11 @@ function verificarPassword(usuario, password) {
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
-  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
   usuario.password = nuevaPassword;
+
   return usuario;
 }
 
@@ -123,7 +123,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  for(var i = 0; i < usuarios.length; i++) {
+  for (var i = 0; i < usuarios.length; i++) {
     usuarios[i].esPremium = true;
   }
   return usuarios;
@@ -137,8 +137,7 @@ function sumarLikesDeUsuario(usuario) {
   // Devuelve la suma
   // Tu código:
   var suma = 0;
-
-  for(var i = 0; i < usuario.posts.length; i++) {
+  for (var i = 0; i < usuario.posts.length; i++) {
     suma = suma + usuario.posts[i].likes;
   }
 
@@ -155,8 +154,8 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto.calcularPrecioDescuento = function() {
-    return this.precio - ( this.precio * this.porcentajeDeDescuento );
+  producto.calcularPrecioDescuento = function () {
+    return this.precio - (this.precio * this.porcentajeDeDescuento);
   };
   return producto;
 }
